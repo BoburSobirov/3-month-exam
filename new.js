@@ -72,49 +72,121 @@ const menu = [
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
   ];
+  const sectionCenter = document.querySelector(".section-center");
+  const btn = document.getElementById("breakfast");
+  const btn2 = document.getElementById("lunch");
+  const btn3 = document.getElementById("shakes");
+  const btnClear = document.getElementById("clear");
 
-  const elTitle = document.getElementById("title");
-  const elPrice =document.getElementById("price");
-  const elImg =document.getElementById("picture");
-//   const menuFor = menu.forEach(function(product){
-//     elTitle.innerHTML =`<h3>${product.title}</h3>`
-//     elPrice.innerHTML = `<h3>${product.price}</h3>`
-//     elImg.innerHTML = `<img src = "${product.img}">`
-//   })
+window.addEventListener("DOMContentLoaded", function () {
 
-//   const filteredItem = menu.filter(function(item){
-//     if(item.category == "breakfast"){
-//         elPrice.innerHTML = `<h3>${item.category}</h3>`
-//         elTitle.innerHTML = `<h3>${item.id}</h3>`
-//         elImg.innerHTML = `<img src ="${item.img}">`
-//     }
-//   })
 
-// const itemForUi = menu.map(function(item){
-//     console.log(item.title);
-//     console.log(item.price);
-//     console.log(item.img);
-//     elPrice.innerHTML = `<img src = "${item.img}"`
-// })
+    btn.addEventListener("click", function ( evt) {
+        evt.preventDefault
+        let displayMenu = menu.map(function (item) {
+            if (item.category == "shakes") {
+                return `<article class="menu-item"  />
+               <img src="${item.img}" alt="${item.title}" class="photo">
+       
+               <div class="item-info">
+                   <header>
+                       <h4>${item.title}</h4>
+                       <h4 class="price">${item.price}</h4>
+                   </header>
+                   <p class="item-text">
+                     ${item.desc}
+                   </p>
+               </div>
+            </article>`
+            }
+        })
+        displayMenu = displayMenu.join("")
+        sectionCenter.innerHTML = displayMenu
+    })
 
-const sectionCenter =document.getElementById("section-center");
-window.addEventListener("DOMContentLoaded", function(){
-  let displayMenu = menu.map (function(item){
-    return `<article class="menu-item">
-    <img src=${item.img} alt=${item.title} class="photo"/>
-    <div class ="item-info">
-    <header>
-    <h4>${item.title}<h4/>
-    <h4 class="price">${item.price}</h4>
-    </header>
-    <p class="item-text">
-      ${item.desc}
-    </p>
-    </div>
-    </article>` 
-  });
-  displayMenu =displayMenu.join("");
-  sectionCenter.innerHTML = displayMenu;
+    btn2.addEventListener("click", function (evt) {
+        evt.preventDefault
+        let displayMenu = menu.map(function (item) {
+            if (item.category == "lunch") {
+                return `<article class="menu-item"  />
+               <img src="${item.img}" alt="${item.title}" class="photo">
+       
+               <div class="item-info">
+                   <header>
+                       <h4>${item.title}</h4>
+                       <h4 class="price">${item.price}</h4>
+                   </header>
+                   <p class="item-text">
+                     ${item.desc}
+                   </p>
+               </div>
+            </article>`
+            }
+        })
+        displayMenu = displayMenu.join("")
+        sectionCenter.innerHTML = displayMenu
+    })
+
+
+    btn3.addEventListener("click", function (evt) {
+        evt.preventDefault
+        let displayMenu = menu.map(function (item) {
+            if (item.category == "breakfast") {
+                return `<article class="menu-item"  />
+               <img src="${item.img}" alt="${item.title}" class="photo">
+       
+               <div class="item-info">
+                   <header>
+                       <h4>${item.title}</h4>
+                       <h4 class="price">${item.price}</h4>
+                   </header>
+                   <p class="item-text">
+                     ${item.desc}
+                   </p>
+               </div>
+            </article>`
+            }
+        })
+        displayMenu = displayMenu.join("")
+        sectionCenter.innerHTML = displayMenu
+    })
+
+    let displayMenu = menu.map(function (item) {
+        
+            return `<article class="menu-item"/>
+           <img src="${item.img}" alt="${item.title}" class="photo">
+   
+           <div class="item-info">
+               <header>
+                   <h4>${item.title}</h4>
+                   <h4 class="price">${item.price}</h4>
+               </header>
+               <p class="item-text">
+                 ${item.desc}
+               </p>
+           </div>
+        </article>`
+       
+    })
+    displayMenu = displayMenu.join("")
+    sectionCenter.innerHTML = displayMenu
 })
+btnClear.addEventListener("click", function (evt) {
+  evt.preventDefault
+  let displayMenu = menu.map(function (item) {
+      if (item.category == "btnClear") {
+          
+      }
+  })
+  displayMenu = displayMenu.join("")
+  sectionCenter.innerHTML = displayMenu
+})
+
+
+
+
+
+
+
 
 
